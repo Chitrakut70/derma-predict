@@ -134,10 +134,13 @@ banner
     background-color: rgba(12, 184, 182) !important;
 }
 #banner{
-	background: url_for('static',filename='./img/bg-banner.jpg') no-repeat fixed;
+	background-image: url('ML Model And back End\static\img\bg-banner.jpg') no-repeat fixed;
 	background-size: cover;
 	min-height: 650px;
 	position: relative;
+
+    background-repeat: no-repeat;
+    
 }
 .bg-color{
 	background-color: RGBA(13, 70, 83, 0.78);
@@ -362,6 +365,7 @@ cta -2
 /***************************************
 contact us
 ***************************************/
+
 .space {
     margin-top: 40px;
 }
