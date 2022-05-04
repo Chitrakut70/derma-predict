@@ -1,3 +1,4 @@
+from email.mime import application
 from unittest import result
 import cv2,os
 from flask import Flask, render_template, request
@@ -8,7 +9,7 @@ from werkzeug.utils import secure_filename
 
 model_path='ML Model And back End\model.h5'
 model=load_model(model_path)
-app = Flask(__name__)
+application = Flask(__name__)
 
 
 
@@ -24,12 +25,12 @@ diseases_dict = {
 
 labels=['nv','mel','bkl','bcc','akiec','vasc','df']
 
-@app.route('/')
+@application.route('/')
 def man():
     return render_template('index.html')
 
 
-@app.route('/predict', methods=['POST'])
+@application.route('/predict', methods=['POST'])
 def home():
     if request.method == 'POST':
         f = request.files['file']
@@ -48,4 +49,4 @@ def home():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    application.run(debug=True)
